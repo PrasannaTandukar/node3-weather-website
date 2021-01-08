@@ -9,7 +9,8 @@ const forecast = (latitude, longitude, callback) => {
       callback("Unable to find location", undefined);
     } else {
       const data = `${body.current.weather_descriptions[0]}. It is currently ${body.current.temperature} Kelvin out. It feels like ${body.current.feelslike} Kelvin out.`;
-      callback(undefined, data);
+      const dataHumidity = `Humidity is ${body.current.humidity} and visibility is ${body.current.uv_index}.`;
+      callback(undefined, data, dataHumidity);
     }
   });
 };

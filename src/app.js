@@ -57,7 +57,7 @@ app.get("/weather", (req, res) => {
           error,
         });
       }
-      forecast(latitude, longitude, (error, forecastData) => {
+      forecast(latitude, longitude, (error, forecastData, dataHumidity) => {
         if (error) {
           return res.send({
             error,
@@ -65,6 +65,7 @@ app.get("/weather", (req, res) => {
         }
         return res.send({
           forecast: forecastData,
+          dataHumidity: dataHumidity,
           location,
           address: req.query.address,
         });
