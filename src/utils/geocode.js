@@ -1,3 +1,4 @@
+//Takes adress and gives its latitude and longitude
 const request = require("request");
 
 const geocode = (address, callback) => {

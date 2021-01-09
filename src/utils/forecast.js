@@ -1,3 +1,4 @@
+//Converts latitude and longitude into weather data
 const request = require("request");
 
 const forecast = (latitude, longitude, callback) => {
